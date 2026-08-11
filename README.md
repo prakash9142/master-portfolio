@@ -206,10 +206,4 @@ PORT=3000
 
 ---
 
-## License
-
-This project is open source under the [MIT License](LICENSE).
-
----
-
 *Built by [Prakash KR. Arya](https://prakashkumar.info/) — Freelance Web Developer & Website Designer*
