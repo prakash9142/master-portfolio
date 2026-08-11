@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedin, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { socialLinks } from "../data/portfolioData";
 
@@ -17,6 +18,23 @@ const getIcon = (label: string) => {
 };
 
 const SocialIcons = () => {
+  const [isModalActive, setIsModalActive] = useState(false);
+
+  useEffect(() => {
+    const checkModalState = () => {
+      const isFixed = document.body.style.position === "fixed" || document.body.style.overflow === "hidden";
+      setIsModalActive(isFixed);
+    };
+    checkModalState();
+
+    const observer = new MutationObserver(checkModalState);
+    observer.observe(document.body, { attributes: true, attributeFilter: ["style"] });
+
+    return () => observer.disconnect();
+  }, []);
+
+  if (isModalActive) return null;
+
   return (
     <>
       {/* Desktop Floating Sidebar */}

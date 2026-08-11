@@ -5,12 +5,27 @@ import { navLinks, heroData } from "../data/portfolioData";
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isModalActive, setIsModalActive] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Automatically detect when a modal/lightbox is active and hide Navbar
+  useEffect(() => {
+    const checkModalState = () => {
+      const isFixed = document.body.style.position === "fixed" || document.body.style.overflow === "hidden";
+      setIsModalActive(isFixed);
+    };
+    checkModalState();
+
+    const observer = new MutationObserver(checkModalState);
+    observer.observe(document.body, { attributes: true, attributeFilter: ["style"] });
+
+    return () => observer.disconnect();
   }, []);
 
   // Prevent background scrolling when mobile menu is open
@@ -30,6 +45,8 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
+        isModalActive ? "opacity-0 pointer-events-none hidden" : "opacity-100"
+      } ${
         scrolled
           ? "bg-[#050814]/75 border-b border-white/5 backdrop-blur-md py-4 shadow-lg shadow-black/20"
           : "bg-transparent py-6"
