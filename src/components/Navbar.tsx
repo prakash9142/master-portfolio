@@ -57,7 +57,7 @@ const Navbar = () => {
           <a
             href="#hero"
             aria-label="Go to home"
-            className="text-xl font-black tracking-wider text-white hover:text-accent transition-colors duration-200"
+            className="text-xl font-black tracking-wider text-white hover:text-accent transition-colors duration-200 bg-[#050814]/90 border border-white/15 px-3 py-1 rounded-full shadow-md"
           >
             PKA
           </a>
@@ -89,21 +89,21 @@ const Navbar = () => {
           )}
         </nav>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Toggle Button (Solid Dark Glass Pill) */}
         <button
-          className="md:hidden text-white hover:text-accent transition-colors duration-200 focus:outline-none relative z-40"
+          className="md:hidden w-10 h-10 rounded-full bg-[#050814] border border-white/20 text-white hover:text-accent hover:border-accent/40 flex items-center justify-center shadow-lg shadow-black/50 transition-all duration-200 focus:outline-none relative z-50 cursor-pointer"
           type="button"
           aria-label={menuOpen ? "Close navigation" : "Open navigation"}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((value) => !value)}
         >
-          {menuOpen ? <FaTimes className="text-xl" /> : <FaBars className="text-xl" />}
+          {menuOpen ? <FaTimes className="text-lg" /> : <FaBars className="text-lg" />}
         </button>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer (100% Solid Dark Background - Zero Transparency Bleed) */}
       <div
-        className={`md:hidden fixed inset-0 w-screen h-screen bg-[#050814]/98 backdrop-blur-lg transition-all duration-300 ease-in-out z-40 flex flex-col items-center justify-center gap-8 ${
+        className={`md:hidden fixed inset-0 w-screen h-screen bg-[#020617] transition-all duration-300 ease-in-out z-40 flex flex-col items-center justify-center gap-7 px-6 ${
           menuOpen ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-4"
         }`}
       >
