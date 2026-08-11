@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-import { navLinks, heroData } from "../data/portfolioData";
+import { FaBars, FaTimes, FaGithub, FaLinkedin, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { navLinks, heroData, socialLinks } from "../data/portfolioData";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -128,6 +128,25 @@ const Navbar = () => {
             Resume
           </a>
         )}
+
+        {/* Mobile Social Links */}
+        <div className="flex items-center gap-4 pt-4 border-t border-white/10 mt-2">
+          {socialLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={link.label}
+              className="w-10 h-10 rounded-full flex items-center justify-center bg-white/5 border border-white/10 text-white/70 hover:text-accent hover:bg-white/10 transition-all"
+            >
+              {link.label.toLowerCase() === "github" && <FaGithub className="text-lg" />}
+              {link.label.toLowerCase() === "linkedin" && <FaLinkedin className="text-lg" />}
+              {link.label.toLowerCase() === "instagram" && <FaInstagram className="text-lg" />}
+              {link.label.toLowerCase() === "whatsapp" && <FaWhatsapp className="text-lg" />}
+            </a>
+          ))}
+        </div>
       </div>
     </header>
   );
