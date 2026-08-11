@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Sitemap URL (replace with your custom domain if different)
 Sitemap: https://prakashkumar.info/sitemap.xml
