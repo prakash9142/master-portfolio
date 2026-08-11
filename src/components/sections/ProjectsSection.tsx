@@ -25,17 +25,31 @@ interface ProjectItem {
   features: string[];
 }
 
-// Multi-Image Gallery Slider & Lightbox Trigger
+// Multi-Image Gallery Slider & Lightbox Trigger with Automatic Slideshow Autoplay
 const ProjectImageGallery = ({
   images,
   title,
   onExpand,
+  autoPlay = true,
 }: {
   images: string[];
   title: string;
   onExpand: (index: number) => void;
+  autoPlay?: boolean;
 }) => {
   const [activeIdx, setActiveIdx] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Automatic Slideshow Autoplay Loop (changes image every 3.5 seconds unless hovered)
+  useEffect(() => {
+    if (!autoPlay || images.length <= 1 || isPaused) return;
+
+    const interval = setInterval(() => {
+      setActiveIdx((prev) => (prev + 1) % images.length);
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, [autoPlay, images.length, isPaused]);
 
   const handleNext = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -50,17 +64,28 @@ const ProjectImageGallery = ({
   };
 
   return (
-    <div className="relative w-full h-full group/gallery overflow-hidden bg-[#020617]">
-      <img
-        src={images[activeIdx]}
-        alt={`${title} screenshot ${activeIdx + 1}`}
-        loading="lazy"
-        className="w-full h-full object-cover object-top transition-all duration-500 group-hover/gallery:scale-105"
-        onError={(event) => {
-          event.currentTarget.src =
-            "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop&q=60";
-        }}
-      />
+    <div
+      className="relative w-full h-full group/gallery overflow-hidden bg-[#020617]"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={activeIdx}
+          src={images[activeIdx]}
+          alt={`${title} screenshot ${activeIdx + 1}`}
+          loading="lazy"
+          initial={{ opacity: 0.8 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0.8 }}
+          transition={{ duration: 0.4 }}
+          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover/gallery:scale-105"
+          onError={(event) => {
+            event.currentTarget.src =
+              "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop&q=60";
+          }}
+        />
+      </AnimatePresence>
 
       {/* Subtle bottom gradient shadow */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/80 via-transparent to-transparent opacity-60 pointer-events-none" />
