@@ -163,12 +163,18 @@ const ProjectsSection = () => {
     title: string;
   } | null>(null);
 
-  // ── Lock Background Scroll & Intercept Hardware / Browser Back Button ──
+  // ── Bulletproof Background Scroll Lock & Browser Back Button Intercept ──
   useEffect(() => {
     const isModalOpen = Boolean(selectedProject || lightboxImage);
 
     if (isModalOpen) {
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
       document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+
       // Push history state to intercept browser back button / swipe back gesture on mobile
       window.history.pushState({ modalOpen: true }, "");
 
@@ -188,12 +194,16 @@ const ProjectsSection = () => {
       window.addEventListener("keydown", handleKeyDown);
 
       return () => {
+        const savedScrollY = Math.abs(parseInt(document.body.style.top || "0", 10));
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.width = "";
         document.body.style.overflow = "";
+        document.documentElement.style.overflow = "";
+        window.scrollTo(0, savedScrollY);
         window.removeEventListener("popstate", handlePopState);
         window.removeEventListener("keydown", handleKeyDown);
       };
-    } else {
-      document.body.style.overflow = "";
     }
   }, [selectedProject, lightboxImage]);
 
@@ -346,6 +356,7 @@ const ProjectsSection = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={closeModal}
+            style={{ overscrollBehavior: "contain", touchAction: "pan-y" }}
             className="fixed inset-0 z-[100] bg-[#050814]/95 backdrop-blur-xl flex items-center justify-center p-3 sm:p-6 md:p-8 overflow-y-auto"
           >
             <motion.div
@@ -383,7 +394,10 @@ const ProjectsSection = () => {
               </div>
 
               {/* Scrollable Modal Content */}
-              <div className="p-5 sm:p-8 flex flex-col md:flex-row gap-8 overflow-y-auto max-h-[calc(92vh-65px)]">
+              <div
+                style={{ overscrollBehavior: "contain" }}
+                className="p-5 sm:p-8 flex flex-col md:flex-row gap-8 overflow-y-auto max-h-[calc(92vh-65px)]"
+              >
                 
                 {/* Left Column: Visual Gallery */}
                 <div className="flex-1 flex flex-col gap-5 min-w-0">
