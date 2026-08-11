@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --vh: 100vh;
+  font-family: "Inter", system-ui, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  background-color: #050814;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background: radial-gradient(circle at top, rgba(94, 234, 210, 0.12), transparent 28%),
+    radial-gradient(circle at 10% 20%, rgba(135, 86, 255, 0.08), transparent 24%),
+    #050814;
+  color: #e5e7f0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(11, 17, 35, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  .glass-card-hover {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  .glass-card-hover:hover {
+    background: rgba(11, 17, 35, 0.65);
+    border-color: rgba(94, 234, 210, 0.24);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4), 0 0 30px rgba(94, 234, 210, 0.08);
+  }
+  .glow-text-cyan {
+    text-shadow: 0 0 20px rgba(94, 234, 210, 0.4);
+  }
+  .glow-text-purple {
+    text-shadow: 0 0 20px rgba(127, 125, 255, 0.4);
+  }
+  .neon-border-cyan {
+    box-shadow: 0 0 15px rgba(94, 234, 210, 0.15);
+  }
+  .neon-border-purple {
+    box-shadow: 0 0 15px rgba(127, 125, 255, 0.15);
+  }
+}

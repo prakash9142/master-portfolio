@@ -1,0 +1,193 @@
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #030712;
+  z-index: 999999999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: auto;
+}
+
+.loading-screen.loading-out {
+  opacity: 0;
+  transform: scale(1.05);
+  pointer-events: none;
+}
+
+/* Brand Header */
+.loading-header-brand {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  font-family: "Outfit", sans-serif;
+}
+
+.brand-logo {
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2dd4bf 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sys-status {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #2dd4bf;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #2dd4bf;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(45, 212, 191, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(45, 212, 191, 0);
+  }
+}
+
+/* Center Content */
+.loader-center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 32px;
+  z-index: 5;
+  text-align: center;
+}
+
+.progress-ring-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.progress-ring-bg {
+  stroke: rgba(255, 255, 255, 0.03);
+}
+
+.progress-ring-indicator {
+  transition: stroke-dashoffset 0.3s ease;
+  filter: drop-shadow(0 0 8px rgba(45, 212, 191, 0.3));
+}
+
+.progress-value {
+  position: absolute;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  font-family: "Outfit", sans-serif;
+  color: #ffffff;
+}
+
+.percentage {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.percent-symbol {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+  margin-left: 2px;
+}
+
+/* Tech Console Logs */
+.console-logs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 6px;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  min-height: 32px;
+}
+
+.console-line {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.console-line.line-1 {
+  animation: blink-log 1.5s infinite;
+}
+
+.console-line.line-2 {
+  color: #2dd4bf;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(45, 212, 191, 0.2);
+}
+
+@keyframes blink-log {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.4; }
+}
+
+/* Tech Grid Background Deco */
+.grid-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .loading-header-brand {
+    top: 24px;
+    left: 24px;
+    right: 24px;
+  }
+  .brand-logo {
+    font-size: 18px;
+  }
+}

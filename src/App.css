@@ -1,0 +1,38 @@
+/* Floating Particles System */
+.floating-particles {
+  position: fixed;
+  inset: 0;
+  z-index: 8;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.floating-particles .particle {
+  position: absolute;
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  opacity: 0.15;
+  background: radial-gradient(circle, rgba(94, 234, 210, 0.8), rgba(94, 234, 210, 0));
+  animation: drift 18s infinite ease-in-out;
+}
+
+.floating-particles .particle-1 { top: 10%; left: 18%; animation-duration: 22s; animation-delay: 0s; }
+.floating-particles .particle-2 { top: 22%; left: 80%; width: 18px; height: 18px; animation-duration: 20s; animation-delay: 2s; }
+.floating-particles .particle-3 { top: 45%; left: 12%; animation-duration: 25s; animation-delay: 1s; }
+.floating-particles .particle-4 { top: 64%; left: 72%; animation-duration: 16s; animation-delay: 4s; }
+.floating-particles .particle-5 { top: 30%; left: 45%; width: 24px; height: 24px; animation-duration: 28s; animation-delay: 2.5s; }
+.floating-particles .particle-6 { top: 80%; left: 24%; animation-duration: 21s; animation-delay: 6s; }
+.floating-particles .particle-7 { top: 12%; left: 60%; animation-duration: 19s; animation-delay: 3.5s; }
+.floating-particles .particle-8 { top: 56%; left: 92%; width: 18px; height: 18px; animation-duration: 17s; animation-delay: 1.2s; }
+.floating-particles .particle-9 { top: 88%; left: 42%; width: 10px; height: 10px; animation-duration: 20s; animation-delay: 5s; }
+.floating-particles .particle-10 { top: 50%; left: 26%; width: 22px; height: 22px; animation-duration: 24s; animation-delay: 7s; }
+.floating-particles .particle-11 { top: 15%; left: 32%; width: 12px; height: 12px; animation-duration: 26s; animation-delay: 9s; }
+.floating-particles .particle-12 { top: 74%; left: 56%; width: 20px; height: 20px; animation-duration: 23s; animation-delay: 4.5s; }
+
+@keyframes drift {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(18px, -32px) scale(1.15); }
+  100% { transform: translate(0, 0) scale(1); }
+}
