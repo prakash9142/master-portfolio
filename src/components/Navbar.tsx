@@ -14,10 +14,10 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Automatically detect when a modal/lightbox is active and hide Navbar
+  // Automatically detect when a project modal/lightbox is active and hide Navbar
   useEffect(() => {
     const checkModalState = () => {
-      const isFixed = document.body.style.position === "fixed" || document.body.style.overflow === "hidden";
+      const isFixed = document.body.style.position === "fixed";
       setIsModalActive(isFixed);
     };
     checkModalState();

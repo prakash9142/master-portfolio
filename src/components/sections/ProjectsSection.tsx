@@ -12,6 +12,8 @@ import {
   FaChevronRight,
   FaEye,
   FaArrowLeft,
+  FaGlobe,
+  FaLaptopCode,
 } from "react-icons/fa";
 
 interface ProjectItem {
@@ -25,7 +27,7 @@ interface ProjectItem {
   features: string[];
 }
 
-// Multi-Image Gallery Slider & Lightbox Trigger with Automatic Slideshow Autoplay
+// Multi-Image Gallery Slider Component
 const ProjectImageGallery = ({
   images,
   title,
@@ -40,13 +42,12 @@ const ProjectImageGallery = ({
   const [activeIdx, setActiveIdx] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  // Automatic Slideshow Autoplay Loop (changes image every 3.5 seconds unless hovered)
   useEffect(() => {
     if (!autoPlay || images.length <= 1 || isPaused) return;
 
     const interval = setInterval(() => {
       setActiveIdx((prev) => (prev + 1) % images.length);
-    }, 3500);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [autoPlay, images.length, isPaused]);
@@ -75,10 +76,10 @@ const ProjectImageGallery = ({
           src={images[activeIdx]}
           alt={`${title} screenshot ${activeIdx + 1}`}
           loading="lazy"
-          initial={{ opacity: 0.8 }}
+          initial={{ opacity: 0.85 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0.8 }}
-          transition={{ duration: 0.4 }}
+          exit={{ opacity: 0.85 }}
+          transition={{ duration: 0.35 }}
           className="w-full h-full object-cover object-top transition-transform duration-500 group-hover/gallery:scale-105"
           onError={(event) => {
             event.currentTarget.src =
@@ -88,14 +89,14 @@ const ProjectImageGallery = ({
       </AnimatePresence>
 
       {/* Subtle bottom gradient shadow */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/80 via-transparent to-transparent opacity-60 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/90 via-transparent to-transparent opacity-70 pointer-events-none" />
 
       {/* Prev / Next Arrows */}
       {images.length > 1 && (
         <>
           <button
             onClick={handlePrev}
-            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#050814]/80 border border-white/10 text-white flex items-center justify-center hover:bg-[#2dd4bf] hover:text-[#050814] active:scale-95 transition-all duration-200 z-20 shadow-md"
+            className="absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#050814]/85 border border-white/15 text-white flex items-center justify-center hover:bg-[#2dd4bf] hover:text-[#050814] active:scale-95 transition-all duration-200 z-20 shadow-md"
             type="button"
             title="Previous screenshot"
           >
@@ -104,7 +105,7 @@ const ProjectImageGallery = ({
 
           <button
             onClick={handleNext}
-            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#050814]/80 border border-white/10 text-white flex items-center justify-center hover:bg-[#2dd4bf] hover:text-[#050814] active:scale-95 transition-all duration-200 z-20 shadow-md"
+            className="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#050814]/85 border border-white/15 text-white flex items-center justify-center hover:bg-[#2dd4bf] hover:text-[#050814] active:scale-95 transition-all duration-200 z-20 shadow-md"
             type="button"
             title="Next screenshot"
           >
@@ -119,17 +120,17 @@ const ProjectImageGallery = ({
           e.stopPropagation();
           onExpand(activeIdx);
         }}
-        className="absolute top-3 right-3 px-2.5 py-1.5 rounded-lg bg-[#050814]/85 border border-white/20 text-white hover:text-[#050814] hover:bg-[#2dd4bf] text-[10px] font-mono font-bold flex items-center gap-1.5 transition-all duration-200 z-20 backdrop-blur-md shadow-md"
+        className="absolute top-3 right-3 px-2.5 py-1.5 rounded-lg bg-[#050814]/85 border border-white/20 text-white/90 hover:text-[#050814] hover:bg-[#2dd4bf] text-[10px] font-mono font-bold flex items-center gap-1.5 transition-all duration-200 z-20 backdrop-blur-md shadow-md"
         type="button"
         title="View full image"
       >
         <FaExpand className="text-[10px]" />
-        <span>Expand</span>
+        <span>Enlarge</span>
       </button>
 
-      {/* Thumbnails strip for multi-image projects */}
+      {/* Thumbnails indicator strip */}
       {images.length > 1 && (
-        <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 bg-[#050814]/80 px-2.5 py-1 rounded-full border border-white/10 backdrop-blur-md z-20">
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 bg-[#050814]/80 px-2.5 py-1 rounded-full border border-white/10 backdrop-blur-md z-20">
           {images.map((_, i) => (
             <button
               key={i}
@@ -143,7 +144,7 @@ const ProjectImageGallery = ({
                   : "bg-white/30 hover:bg-white/60"
               }`}
               type="button"
-              title={`View image ${i + 1}`}
+              title={`View screenshot ${i + 1}`}
             />
           ))}
         </div>
@@ -163,7 +164,7 @@ const ProjectsSection = () => {
     title: string;
   } | null>(null);
 
-  // ── Bulletproof Background Scroll Lock & Browser Back Button Intercept ──
+  // ── Bulletproof Scroll Lock ──
   useEffect(() => {
     const isModalOpen = Boolean(selectedProject || lightboxImage);
 
@@ -175,7 +176,6 @@ const ProjectsSection = () => {
       document.body.style.overflow = "hidden";
       document.documentElement.style.overflow = "hidden";
 
-      // Push history state to intercept browser back button / swipe back gesture on mobile
       window.history.pushState({ modalOpen: true }, "");
 
       const handlePopState = () => {
@@ -217,10 +217,10 @@ const ProjectsSection = () => {
       return "E-Commerce";
     if (title.toLowerCase().includes("elevate") || title.toLowerCase().includes("marketing"))
       return "Marketing";
-    return "Internal Tools";
+    return "Enterprise Tools";
   };
 
-  const categories = ["All", "E-Commerce", "Marketing", "Internal Tools"];
+  const categories = ["All", "E-Commerce", "Marketing", "Enterprise Tools"];
 
   const filteredProjects = projectsData.filter((project) => {
     if (activeFilter === "All") return true;
@@ -231,21 +231,29 @@ const ProjectsSection = () => {
     setLightboxImage({ images, index, title });
   };
 
+  const cleanDomainName = (url: string) => {
+    if (!url || url === "#") return null;
+    return url.replace("https://", "").replace("http://", "").replace("www.", "").replace(/\/$/, "");
+  };
+
+  // Select top featured project
+  const featuredProject = projectsData[0]; // Booon Fashion
+
   return (
     <section className="py-24 px-4 sm:px-12 lg:px-16 max-w-7xl mx-auto overflow-x-hidden" id="projects">
       <SectionHeading
-        eyebrow="Projects"
-        title="Selected work for startups, SaaS, and modern digital products"
-        description="Explore live product showcases with high-resolution image galleries, tech stack transparency, and live deployment links."
+        eyebrow="Portfolio & Works"
+        title="Selected Work & Production Digital Products"
+        description="Explore live client deployments, SaaS applications, marketing platforms, and internal enterprise tools built with precision."
       />
 
       {/* Category Filter Tabs */}
-      <div className="flex flex-wrap gap-2.5 mb-12 justify-start">
+      <div className="flex flex-wrap gap-2.5 mb-10 justify-start">
         {categories.map((category) => (
           <button
             key={category}
             onClick={() => setActiveFilter(category)}
-            className={`px-4 sm:px-5 py-2.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider border transition-all duration-300 ${
+            className={`px-5 py-2.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider border transition-all duration-300 ${
               activeFilter === category
                 ? "bg-[#2dd4bf] text-[#050814] border-[#2dd4bf] shadow-lg shadow-[#2dd4bf]/20"
                 : "bg-white/5 border-white/10 text-white/60 hover:text-white hover:border-white/20"
@@ -256,7 +264,113 @@ const ProjectsSection = () => {
         ))}
       </div>
 
-      {/* Projects Grid */}
+      {/* ── Featured Hero Project Showcase Banner (Shown on "All" filter) ── */}
+      {activeFilter === "All" && featuredProject && (
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-12 rounded-[32px] border border-white/15 bg-gradient-to-br from-[#020617] via-[#050b21] to-[#020617] p-6 sm:p-8 shadow-2xl relative overflow-hidden group"
+        >
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#2dd4bf]/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+            {/* Visual Preview */}
+            <div className="lg:col-span-7 aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 shadow-xl bg-white/5 relative">
+              <ProjectImageGallery
+                images={
+                  featuredProject.images && featuredProject.images.length > 0
+                    ? featuredProject.images
+                    : [featuredProject.image || ""]
+                }
+                title={featuredProject.title}
+                onExpand={(idx) =>
+                  openLightbox(
+                    featuredProject.images && featuredProject.images.length > 0
+                      ? featuredProject.images
+                      : [featuredProject.image || ""],
+                    idx,
+                    featuredProject.title
+                  )
+                }
+              />
+            </div>
+
+            {/* Featured Content */}
+            <div className="lg:col-span-5 flex flex-col justify-between gap-6">
+              <div>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-[10px] font-mono font-bold text-[#2dd4bf] uppercase tracking-widest bg-[#2dd4bf]/10 border border-[#2dd4bf]/25 px-3 py-1 rounded-full">
+                    ★ FEATURED CLIENT WORK
+                  </span>
+                  {cleanDomainName(featuredProject.live) && (
+                    <span className="text-[10px] font-mono text-white/60 bg-white/5 border border-white/10 px-2.5 py-1 rounded-full flex items-center gap-1">
+                      <FaGlobe className="text-[#2dd4bf] text-[10px]" />
+                      {cleanDomainName(featuredProject.live)}
+                    </span>
+                  )}
+                </div>
+
+                <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-snug mb-3">
+                  {featuredProject.title}
+                </h3>
+
+                <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-4">
+                  {featuredProject.description}
+                </p>
+
+                {/* Features Highlights */}
+                <ul className="flex flex-col gap-2 mb-6">
+                  {featuredProject.features.map((feat, i) => (
+                    <li key={i} className="text-xs text-white/75 flex items-start gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#2dd4bf] mt-1.5 shrink-0" />
+                      <span>{feat}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {featuredProject.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="text-xs font-mono font-semibold text-white/80 bg-white/5 border border-white/10 px-3 py-1 rounded-xl"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex flex-wrap gap-3 pt-4 border-t border-white/10">
+                {featuredProject.live && featuredProject.live !== "#" && (
+                  <a
+                    href={featuredProject.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-2 bg-[#2dd4bf] hover:bg-[#2dd4bf]/90 text-[#050814] font-extrabold text-xs sm:text-sm py-3 px-5 rounded-xl shadow-lg shadow-[#2dd4bf]/20 transition-all"
+                  >
+                    <span>Visit Live Website</span>
+                    <FaExternalLinkAlt className="text-xs" />
+                  </a>
+                )}
+                <button
+                  onClick={() => setSelectedProject(featuredProject)}
+                  className="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-white border border-white/10 font-bold text-xs sm:text-sm py-3 px-5 rounded-xl transition-all"
+                  type="button"
+                >
+                  <FaLaptopCode className="text-sm" />
+                  <span>Inspect Details</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      )}
+
+      {/* ── Standard Projects Showcase Grid ── */}
       <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         <AnimatePresence mode="popLayout">
           {filteredProjects.map((project) => {
@@ -266,6 +380,8 @@ const ProjectsSection = () => {
                 : project.image
                 ? [project.image]
                 : [];
+
+            const domain = cleanDomainName(project.live);
 
             return (
               <motion.article
@@ -285,6 +401,14 @@ const ProjectsSection = () => {
                     title={project.title}
                     onExpand={(idx) => openLightbox(projectImages, idx, project.title)}
                   />
+
+                  {/* Domain pill overlay on image */}
+                  {domain && (
+                    <div className="absolute top-3 left-3 bg-[#050814]/85 border border-white/15 px-2.5 py-1 rounded-full text-[10px] font-mono text-white/80 flex items-center gap-1.5 backdrop-blur-md z-20">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-pulse" />
+                      <span>{domain}</span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Body Content */}
@@ -335,7 +459,7 @@ const ProjectsSection = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="text-[11px] font-mono font-bold text-white/70 hover:text-white flex items-center gap-1 bg-white/5 hover:bg-white/10 border border-white/10 px-3 py-1.5 rounded-full transition-all"
+                        className="text-[11px] font-mono font-bold text-white/80 hover:text-[#050814] flex items-center gap-1 bg-white/5 hover:bg-[#2dd4bf] border border-white/10 px-3 py-1.5 rounded-full transition-all shadow-sm"
                       >
                         Live <FaExternalLinkAlt className="text-[9px]" />
                       </a>
@@ -367,7 +491,7 @@ const ProjectsSection = () => {
               onClick={(e) => e.stopPropagation()}
               className="rounded-[24px] sm:rounded-[32px] border border-white/15 bg-[#020617] w-full max-w-4xl flex flex-col shadow-2xl relative max-h-[92vh] overflow-hidden"
             >
-              {/* Sticky Top Header Bar for Mobile & Desktop */}
+              {/* Sticky Top Header Bar */}
               <div className="sticky top-0 z-30 bg-[#020617] border-b border-white/10 px-4 sm:px-6 py-3.5 flex items-center justify-between backdrop-blur-md">
                 <button
                   onClick={closeModal}
@@ -398,7 +522,6 @@ const ProjectsSection = () => {
                 style={{ overscrollBehavior: "contain" }}
                 className="p-5 sm:p-8 flex flex-col md:flex-row gap-8 overflow-y-auto max-h-[calc(92vh-65px)]"
               >
-                
                 {/* Left Column: Visual Gallery */}
                 <div className="flex-1 flex flex-col gap-5 min-w-0">
                   <div className="relative aspect-video rounded-2xl overflow-hidden bg-white/5 border border-white/10 shadow-lg">
@@ -425,9 +548,8 @@ const ProjectsSection = () => {
                     />
                   </div>
 
-                  {/* Click to expand prompt */}
                   <p className="text-[10px] font-mono text-white/40 text-center flex items-center justify-center gap-1.5">
-                    <FaEye className="text-[#2dd4bf]" /> Tap image or 'Expand' to view full resolution
+                    <FaEye className="text-[#2dd4bf]" /> Tap image or 'Enlarge' to view full resolution
                   </p>
 
                   {/* Tech Stack Matrix */}
@@ -509,7 +631,6 @@ const ProjectsSection = () => {
                     )}
                   </div>
                 </div>
-
               </div>
             </motion.div>
           </motion.div>
