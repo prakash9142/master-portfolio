@@ -4,13 +4,7 @@ import SectionHeading from "./SectionHeading";
 import { FaGraduationCap, FaBriefcase, FaCode } from "react-icons/fa";
 
 const AboutSection = () => {
-  // Stats data
-  const stats = [
-    { value: "3+", label: "Major Live Projects" },
-    { value: "99%", label: "Client Satisfaction" },
-    { value: "15+", label: "Technologies Mastered" },
-    { value: "24/7", label: "Startup Support" },
-  ];
+  const stats = aboutData.stats;
 
   const getTimelineIcon = (title: string) => {
     if (title.toLowerCase().includes("graduate") || title.toLowerCase().includes("cs")) {

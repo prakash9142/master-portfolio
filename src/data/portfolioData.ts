@@ -15,14 +15,20 @@ export const heroData = {
 };
 
 export const aboutData = {
-  heading: "Built in Bengaluru. Built to Scale.",
+  heading: "Freelance Web Developer & Designer",
   description:
-    "I turn ambitious ideas into AI-powered products, high-converting websites, and intelligent automation systems — from Bengaluru to businesses anywhere in the world. I specialize in building custom React & Next.js web applications, Node.js backend architecture, and seamless AI workflow integrations.",
+    "I am a professional freelance web developer and website designer. I specialize in building high-converting landing pages, custom SaaS products, API integrations, and premium 3D/interactive frontends. I work with startups, founders, and business owners in India and globally to launch high-performance web systems.",
   highlights: [
     "Expert freelance web developer building premium React, Next.js, and Node.js solutions.",
     "Professional website designer creating stunning, conversion-optimized user experiences (UI/UX).",
     "SaaS MVP specialist helping startups launch fast, clean, and database-driven products.",
     "Full support from design to deployment, including SEO optimization and server management.",
+  ],
+  stats: [
+    { value: "3+", label: "Major Live Projects" },
+    { value: "99%", label: "Client Satisfaction" },
+    { value: "15+", label: "Technologies Mastered" },
+    { value: "24/7", label: "Startup Support" },
   ],
   timeline: [
     {
