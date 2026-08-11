@@ -346,7 +346,7 @@ const ProjectsSection = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={closeModal}
-            className="fixed inset-0 z-50 bg-[#050814]/95 backdrop-blur-xl flex items-center justify-center p-3 sm:p-6 md:p-8 overflow-y-auto"
+            className="fixed inset-0 z-[100] bg-[#050814]/95 backdrop-blur-xl flex items-center justify-center p-3 sm:p-6 md:p-8 overflow-y-auto"
           >
             <motion.div
               initial={{ scale: 0.95, y: 20 }}
@@ -356,8 +356,8 @@ const ProjectsSection = () => {
               onClick={(e) => e.stopPropagation()}
               className="rounded-[24px] sm:rounded-[32px] border border-white/15 bg-[#020617] w-full max-w-4xl flex flex-col shadow-2xl relative max-h-[92vh] overflow-hidden"
             >
-              {/* Sticky Top Header Bar for Mobile & Desktop (Guarantees Close / Back Button is ALWAYS visible!) */}
-              <div className="sticky top-0 z-30 bg-[#020617]/95 border-b border-white/10 px-5 py-4 flex items-center justify-between backdrop-blur-md">
+              {/* Sticky Top Header Bar for Mobile & Desktop */}
+              <div className="sticky top-0 z-30 bg-[#020617] border-b border-white/10 px-4 sm:px-6 py-3.5 flex items-center justify-between backdrop-blur-md">
                 <button
                   onClick={closeModal}
                   className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#2dd4bf] text-[#050814] font-extrabold text-xs shadow-md hover:bg-[#2dd4bf]/90 transition-all cursor-pointer"
@@ -373,7 +373,7 @@ const ProjectsSection = () => {
                   </span>
                   <button
                     onClick={closeModal}
-                    className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-[#2dd4bf] hover:bg-[#2dd4bf]/20 transition-all cursor-pointer bg-white/5"
+                    className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white hover:border-[#2dd4bf] hover:bg-[#2dd4bf]/20 transition-all cursor-pointer bg-white/10"
                     type="button"
                     title="Close project modal"
                   >
@@ -510,13 +510,13 @@ const ProjectsSection = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={closeModal}
-            className="fixed inset-0 z-50 bg-[#020617]/95 backdrop-blur-xl flex flex-col items-center justify-center p-3 sm:p-8 select-none"
+            className="fixed inset-0 z-[120] bg-[#020617]/98 backdrop-blur-2xl flex flex-col items-center justify-center p-3 sm:p-8 select-none"
           >
             {/* Top Sticky Header */}
-            <div className="w-full max-w-6xl flex items-center justify-between pb-4 border-b border-white/10 mb-3">
+            <div className="w-full max-w-6xl flex items-center justify-between pb-3 pt-2 border-b border-white/10 mb-3 px-2">
               <button
                 onClick={closeModal}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#2dd4bf] text-[#050814] font-extrabold text-xs transition-all"
+                className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#2dd4bf] text-[#050814] font-extrabold text-xs shadow-lg hover:bg-[#2dd4bf]/90 transition-all cursor-pointer"
                 type="button"
               >
                 <FaArrowLeft className="text-xs" />
@@ -524,16 +524,17 @@ const ProjectsSection = () => {
               </button>
 
               <div className="flex items-center gap-3">
-                <span className="text-xs font-mono text-[#2dd4bf] bg-[#2dd4bf]/10 border border-[#2dd4bf]/20 px-2 py-0.5 rounded-full">
+                <span className="text-xs font-mono font-bold text-[#2dd4bf] bg-[#2dd4bf]/10 border border-[#2dd4bf]/20 px-2.5 py-1 rounded-full">
                   {lightboxImage.index + 1} / {lightboxImage.images.length}
                 </span>
 
                 <button
                   onClick={closeModal}
-                  className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-all cursor-pointer"
+                  className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white bg-white/10 hover:bg-[#2dd4bf] hover:text-[#050814] transition-all cursor-pointer"
                   type="button"
+                  title="Close lightbox"
                 >
-                  <FaTimes />
+                  <FaTimes className="text-base" />
                 </button>
               </div>
             </div>

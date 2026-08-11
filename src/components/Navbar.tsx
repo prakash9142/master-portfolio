@@ -29,13 +29,13 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
         scrolled
           ? "bg-[#050814]/75 border-b border-white/5 backdrop-blur-md py-4 shadow-lg shadow-black/20"
           : "bg-transparent py-6"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between relative z-50">
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between relative z-40">
         <div className="flex items-center gap-3">
           <a
             href="#hero"
@@ -74,7 +74,7 @@ const Navbar = () => {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-white hover:text-accent transition-colors duration-200 focus:outline-none relative z-50"
+          className="md:hidden text-white hover:text-accent transition-colors duration-200 focus:outline-none relative z-40"
           type="button"
           aria-label={menuOpen ? "Close navigation" : "Open navigation"}
           aria-expanded={menuOpen}
