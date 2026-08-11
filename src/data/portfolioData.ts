@@ -1,14 +1,13 @@
 export const heroData = {
   name: "Prakash KR. Arya",
-  title: "Freelance Web Developer",
+  title: "AI & Automation Engineer · Full-Stack Developer",
   subtitle:
-    "Hire a professional freelance web developer & website designer. I build premium SaaS experiences, interactive web applications, and custom automation systems for businesses globally.",
+    "I turn ambitious ideas into AI-powered products, high-converting websites, and intelligent automation systems — from Bengaluru to businesses anywhere in the world.",
   roles: [
-    "Freelance Web Developer",
-    "Professional Web Designer",
-    "Full Stack Developer",
-    "SaaS MVP Builder",
-    "AI & Automation Expert",
+    "AI & Automation Engineer",
+    "Full-Stack Developer",
+    "Digital Product Builder",
+    "SaaS MVP Specialist",
   ],
   email: "thekriyak@gmail.com",
   resume: null,
@@ -16,9 +15,9 @@ export const heroData = {
 };
 
 export const aboutData = {
-  heading: "Freelance Web Developer & Designer",
+  heading: "Built in Bengaluru. Built to Scale.",
   description:
-    "I am a professional freelance web developer and website designer. I specialize in building high-converting landing pages, custom SaaS products, API integrations, and premium 3D/interactive frontends. I work with startups, founders, and business owners in India and globally to launch high-performance web systems.",
+    "I turn ambitious ideas into AI-powered products, high-converting websites, and intelligent automation systems — from Bengaluru to businesses anywhere in the world. I specialize in building custom React & Next.js web applications, Node.js backend architecture, and seamless AI workflow integrations.",
   highlights: [
     "Expert freelance web developer building premium React, Next.js, and Node.js solutions.",
     "Professional website designer creating stunning, conversion-optimized user experiences (UI/UX).",
