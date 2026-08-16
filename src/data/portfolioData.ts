@@ -1,50 +1,60 @@
 export const heroData = {
-  name: "Prakash KR. Arya",
-  title: "AI & Automation Engineer · Full-Stack Developer",
+  name: "Prakash Kumar Arya",
+  title: "Junior Full-Stack Developer | React • Node.js • AI",
   subtitle:
-    "I turn ambitious ideas into AI-powered products, high-converting websites, and intelligent automation systems — from Bengaluru to businesses anywhere in the world.",
+    "Junior full-stack developer skilled in React.js, Node.js, and modern web deployment, with hands-on experience building production-facing applications, e-commerce platforms, and AI-assisted tools using local LLM integration.",
   roles: [
-    "AI & Automation Engineer",
-    "Full-Stack Developer",
-    "Digital Product Builder",
-    "SaaS MVP Specialist",
+    "Junior Full-Stack Developer",
+    "React & Node.js Developer",
+    "AI & LLM Specialist",
+    "E-Commerce & SaaS Builder",
   ],
-  email: "thekriyak@gmail.com",
+  email: "pk01br01@gmail.com",
+  phone: "+91 62035 38520",
   resume: null,
-  whatsapp: "https://wa.me/916205338520",
+  whatsapp: "https://wa.me/916203538520",
+  github: "https://github.com/prakash9142",
+  website: "https://prakashkumar.info/",
 };
 
 export const aboutData = {
-  heading: "Freelance Web Developer & Designer",
+  heading: "Junior Full-Stack Developer & AI Specialist",
   description:
-    "I am a professional freelance web developer and website designer. I specialize in building high-converting landing pages, custom SaaS products, API integrations, and premium 3D/interactive frontends. I work with startups, founders, and business owners in India and globally to launch high-performance web systems.",
+    "Junior full-stack developer skilled in React.js, Node.js, and modern web deployment, with hands-on experience building production-facing applications, e-commerce platforms, and AI-assisted tools using local LLM integration.",
   highlights: [
-    "Expert freelance web developer building premium React, Next.js, and Node.js solutions.",
-    "Professional website designer creating stunning, conversion-optimized user experiences (UI/UX).",
-    "SaaS MVP specialist helping startups launch fast, clean, and database-driven products.",
-    "Full support from design to deployment, including SEO optimization and server management.",
+    "Production-facing web application development using React.js, Node.js, and modern JavaScript.",
+    "Hands-on experience building pharmaceutical e-commerce platforms & workforce CRM systems.",
+    "AI-first product development with offline local LLMs (Ollama, TinyLlama) and context memory.",
+    "End-to-end engineering workflows from UI/UX design to SEO optimization and cloud deployment.",
   ],
   stats: [
-    { value: "3+", label: "Major Live Projects" },
-    { value: "99%", label: "Client Satisfaction" },
-    { value: "15+", label: "Technologies Mastered" },
-    { value: "24/7", label: "Startup Support" },
+    { value: "5+", label: "Production Projects" },
+    { value: "AVACS", label: "Work Experience" },
+    { value: "React/AI", label: "Core Specialization" },
+    { value: "2026", label: "B.Tech CSE Graduate" },
   ],
   timeline: [
     {
-      year: "2025",
-      title: "Computer Science Graduate",
-      subtitle: "Graduated with a Bachelor of Technology in Computer Science.",
+      year: "Feb 2026 – Present",
+      title: "Web Developer Intern — AVACS",
+      subtitle:
+        "Developing and maintaining modern web applications using React.js. Improving responsive UI/UX, version control workflows, and business workforce solutions in Bengaluru, India.",
     },
     {
-      year: "2025–Present",
-      title: "Full Stack Developer at AVACS",
-      subtitle: "Shipping product features, optimizing dashboards, and architecting web systems for enterprise customers.",
+      year: "2022 – 2026",
+      title: "B.Tech in Computer Science & Engineering",
+      subtitle:
+        "ISBM University, Chhattisgarh, India (Expected September 2026). Focused on Full-Stack Systems, Software Engineering, and AI/LLM integrations.",
     },
     {
-      year: "2024–Present",
-      title: "Freelance Web Developer",
-      subtitle: "Delivering polished web apps, landing pages, and API-first MVPs for startups and founders.",
+      year: "2019 – 2021",
+      title: "Higher Secondary (CBSE) — Holy Mission High School",
+      subtitle: "Patna, Bihar | Passed with GPA: 5.8.",
+    },
+    {
+      year: "2019",
+      title: "Secondary School (1st–10th) — Patna Collegiate School",
+      subtitle: "Bihar School Examination Board (BSEB), Patna, Bihar | Passed with GPA: 5.14.",
     },
   ],
 };
@@ -53,226 +63,231 @@ export const skillGroups = [
   {
     label: "Frontend",
     skills: [
-      { name: "React", level: 92 },
-      { name: "Next.js", level: 88 },
-      { name: "Tailwind CSS", level: 90 },
-      { name: "TypeScript", level: 94 },
+      { name: "React.js", level: 94 },
+      { name: "JavaScript", level: 92 },
+      { name: "TypeScript", level: 88 },
+      { name: "Tailwind CSS", level: 92 },
+      { name: "HTML5 & CSS3", level: 95 },
+      { name: "Vite", level: 90 },
     ],
   },
   {
     label: "Backend",
     skills: [
       { name: "Node.js", level: 90 },
-      { name: "Express", level: 86 },
+      { name: "Express.js", level: 88 },
+      { name: "FastAPI", level: 84 },
       { name: "REST APIs", level: 92 },
+      { name: "JWT Auth", level: 86 },
     ],
   },
   {
-    label: "Database",
+    label: "AI / LLM",
     skills: [
+      { name: "Ollama", level: 90 },
+      { name: "TinyLlama", level: 86 },
+      { name: "Local LLM Integration", level: 92 },
+      { name: "Conversational Memory", level: 88 },
+    ],
+  },
+  {
+    label: "Tools & Platforms",
+    skills: [
+      { name: "Git & GitHub", level: 95 },
       { name: "MongoDB", level: 88 },
-      { name: "PostgreSQL", level: 82 },
-      { name: "Firebase", level: 79 },
-    ],
-  },
-  {
-    label: "Tools",
-    skills: [
-      { name: "GitHub", level: 96 },
-      { name: "Figma", level: 84 },
-      { name: "Vercel", level: 88 },
-      { name: "Docker", level: 76 },
+      { name: "Postman", level: 90 },
+      { name: "Vercel", level: 92 },
+      { name: "Responsive UI/UX", level: 94 },
     ],
   },
 ];
 
 export const experienceData = {
   company: "AVACS",
-  role: "Full Stack Developer",
-  duration: "2025 – Present",
+  role: "Web Developer Intern",
+  duration: "February 2026 – Present",
+  location: "Bengaluru, India",
   impact: [
-    "Delivered polished product dashboards with real-time analytics and responsive UI behavior.",
-    "Integrated APIs, authentication flows, and scalable backend services using Node.js and Express.",
-    "Optimized frontend performance and accessibility for mobile-first customers.",
-    "Collaborated with design teams to convert product strategy into premium experiences.",
+    "Develop and maintain modern web applications using React.js and JavaScript.",
+    "Improve responsive UI/UX across devices and contribute to production-facing web experiences.",
+    "Work with Git, deployment workflows, hosting configurations, and version control.",
+    "Contribute to business applications and workforce-management solutions.",
   ],
   metrics: [
-    "+40% faster product load times",
-    "3+ major internal integrations shipped",
-    "Responsive experiences across desktop and mobile",
+    "Web Developer Intern at AVACS",
+    "Workforce CRM & Business Apps",
+    "Production-facing React.js UI/UX",
   ],
 };
 
 export const projectsData = [
   {
-    title: "Booon Fashion",
+    title: "Booon — Fashion Quick-Commerce Platform",
     description:
-      "Bangalore-based online shopping brand for fashion, built to deliver fast, modern e-commerce experiences across desktop and mobile.",
-    stack: ["React.js", "Laravel", "PostgreSQL", "Razorpay"],
+      "Fashion quick-commerce platform delivering 2-hour fashion order fulfillments across desktop and mobile, with custom frontend implementation and backend API integration.",
+    stack: ["React.js", "Tailwind CSS", "Node.js", "REST APIs", "PostgreSQL"],
     live: "https://booon.in/",
     github: "https://github.com/prakash9142",
     features: [
-      "Product category browsing and cart flow",
-      "Secure Razorpay checkout",
-      "Mobile-first fashion storefront",
+      "Contributed to UI/UX design and frontend implementation for fashion quick-commerce",
+      "Assisted with backend development, API integration, and e-commerce functionality",
+      "2-hour fashion order processing and mobile-first storefront",
     ],
     image: "/images/booon_1.jpg",
   },
   {
-    title: "Elevate Data Corp",
+    title: "Buddy AI — Offline AI Assistant",
     description:
-      "Digital marketing company website showcasing data-driven services for lead generation, email campaigns, and CRM support.",
-    stack: ["React.js", "Tailwind CSS", "MongoDB"],
-    live: "https://www.elevatedatacorp.com/",
+      "Built an offline AI assistant using Ollama and local LLMs featuring conversation memory, context-aware responses, and practical LLM product integration.",
+    stack: ["Ollama", "TinyLlama", "Local LLMs", "React.js", "Python"],
+    live: "#",
     github: "https://github.com/prakash9142",
     features: [
-      "Custom marketing service pages",
-      "Lead capture and contact flows",
-      "Responsive, brand-focused design",
+      "Built an offline AI assistant using Ollama and local LLMs",
+      "Implemented conversation memory and context-aware responses",
+      "Demonstrates direct interest in AI-first product development and practical LLM integration",
     ],
-    image: "/images/elevate_data_corp.webp",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=60",
   },
   {
-    title: "Boncel Pharma",
+    title: "Boncel Pharma — Full-Stack E-Commerce Platform",
     description:
-      "Premium pharmaceutical web platform for joint care, bone health, and Vitamin D3 products with online order management and payment checkouts.",
-    stack: ["React.js", "Tailwind CSS", "Razorpay SDK", "Vite"],
+      "Designed and developed a responsive pharmaceutical e-commerce website using React, Vite, Tailwind CSS, Node.js, Express, and MongoDB.",
+    stack: ["React.js", "Vite", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
     live: "https://boncelpharma.com/",
     github: "https://github.com/prakash9142",
     features: [
-      "Product catalog with joint & bone care categorizations",
-      "Secure online payment gateway checkout",
-      "High-speed performance and search indexing",
+      "Designed & developed responsive pharmaceutical e-commerce website",
+      "Implemented product management, backend APIs, and analytics",
+      "SEO optimization, performance tuning, and production deployment",
     ],
     image: "/images/boncel_pharma.webp",
   },
   {
-    title: "AVACS Platform",
+    title: "AVACS Workforce Management & CRM System",
     description:
-      "Enterprise corporate interface built for AVACS, highlighting analytics dashboard capabilities, engineering solutions, and MVP architectures.",
-    stack: ["React.js", "Tailwind CSS", "Node.js", "Vite"],
+      "Designed the UI/UX and frontend experience for a workforce management CRM with backend APIs for attendance tracking, employee activity, and work progress monitoring.",
+    stack: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "REST APIs"],
     live: "https://avacs.in/",
     github: "https://github.com/prakash9142",
     features: [
-      "Optimized load times and layout paint cycles",
-      "Intuitive client dashboards and metrics charts",
-      "Responsive, modern business theme design",
+      "Designed UI/UX and frontend experience for a workforce management CRM",
+      "Assisted with backend APIs and functionality for attendance & work tracking",
+      "Employee activity monitoring and operational status dashboards",
     ],
     image: "/images/avacs_1.webp",
   },
-
   {
-    title: "Company CRM Tool",
+    title: "Personal Portfolio",
     description:
-      "Enterprise internal CRM platform for attendance tracking, live lead records, performance charts, and automation utilities.",
-    stack: ["React", "Tailwind CSS", "JavaScript", "CSS", "Selenium"],
-    live: "#",
+      "Developed a responsive developer portfolio using React, Vite, and Tailwind CSS with interactive animations and modern UI/UX.",
+    stack: ["React.js", "Vite", "Tailwind CSS", "TypeScript"],
+    live: "https://prakashkumar.info/",
     github: "https://github.com/prakash9142",
     features: [
-      "Attendance records and tracking dashboard",
-      "Live lead count and database search workflows",
-      "Automation scripts and testing using Selenium",
+      "Developed responsive developer portfolio with interactive animations & modern UI/UX",
+      "Implemented reusable components, responsive layouts, and SEO optimization",
+      "Production deployment and cross-device testing",
     ],
-    images: [
-      "/images/crm_1.jpg",
-      "/images/crm_2.jpg",
-      "/images/crm_3.jpg",
-      "/images/crm_4.jpg",
-      "/images/crm_5.webp"
-    ],
+    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=60",
+  },
+];
+
+export const educationData = [
+  {
+    degree: "B.Tech, Computer Science & Engineering",
+    institution: "ISBM University",
+    year: "2026 Expected",
+    location: "Chhattisgarh, India",
+  },
+  {
+    degree: "Higher Secondary (CBSE)",
+    institution: "Holy Mission High School",
+    year: "2021",
+    location: "Patna, Bihar",
+  },
+  {
+    degree: "Secondary School (1st–10th)",
+    institution: "Patna Collegiate School (BSEB)",
+    year: "2019",
+    location: "Patna, Bihar",
   },
 ];
 
 export const servicesData = [
   {
-    name: "Web Design & Dev",
+    name: "Full-Stack Web Development",
+    price: "From ₹34,999",
+    items: [
+      "Custom responsive web applications (React, Node.js)",
+      "High-speed Vite & Tailwind CSS frontends",
+      "SEO, Google Analytics, & Search Console setup",
+    ],
+  },
+  {
+    name: "AI & Local LLM Integration",
+    price: "From ₹44,999",
+    items: [
+      "Offline AI assistants using Ollama & TinyLlama",
+      "Conversational memory & context-aware flows",
+      "Custom AI feature integration for products",
+    ],
+  },
+  {
+    name: "E-Commerce & CRM Solutions",
     price: "From ₹39,999",
     items: [
-      "Custom responsive web designs",
-      "Stunning 3D elements & smooth motion",
-      "SEO & Google Search Console setup",
+      "Full-stack pharmaceutical & fashion e-commerce storefronts",
+      "Workforce management CRMs & attendance dashboards",
+      "REST APIs, MongoDB, & Express backend services",
     ],
   },
   {
-    name: "SaaS MVP Development",
-    price: "From ₹1,19,999",
+    name: "UI/UX & Deployment Workflows",
+    price: "From ₹19,999",
     items: [
-      "Rapid prototype construction",
-      "Full-stack React & Node.js backend",
-      "Database & UPI/Razorpay payment integrations",
-    ],
-  },
-  {
-    name: "Interactive UI/UX Design",
-    price: "From ₹24,999",
-    items: [
-      "High-converting landing pages",
-      "Figma wireframes & interactive prototypes",
-      "Vibrant modern branding systems",
-    ],
-  },
-  {
-    name: "Automation & API Systems",
-    price: "From ₹29,999",
-    items: [
-      "Workflow & data automation",
-      "CRM integrations & dashboard metrics",
-      "Secure custom backend APIs",
+      "Responsive UI/UX design & interactive component systems",
+      "Git, GitHub version control & Vercel cloud deployment",
+      "Performance optimization & accessibility improvements",
     ],
   },
 ];
 
 export const faqData = [
   {
-    question: "What is your pricing structure for projects in India?",
+    question: "What is your primary skill set and experience?",
     answer:
-      "I offer flexible, transparent project-based pricing. UI/UX design packages start at ₹24,999, and full website development starts at ₹39,999. For full-stack SaaS products or custom MVPs, pricing typically starts at ₹1,19,999 depending on features and scope.",
+      "I am a Junior Full-Stack Developer specializing in React.js, Node.js, Express, MongoDB, and AI integration (Ollama, local LLMs). I am currently working as a Web Developer Intern at AVACS in Bengaluru.",
   },
   {
-    question: "What payment methods do you accept from Indian clients?",
+    question: "What projects have you built?",
     answer:
-      "I support all major Indian payment methods, including UPI (GPay, PhonePe, Paytm), Direct Bank Transfer (IMPS/NEFT), and secure online payments via Razorpay (Debit/Credit Cards, Netbanking).",
+      "I have built production platforms including Boncel Pharma (pharmaceutical e-commerce), AVACS Workforce CRM (attendance & activity tracking), Booon Fashion (quick-commerce platform), Buddy AI (offline AI assistant with conversation memory), and my personal portfolio.",
   },
   {
-    question: "How long does it take to design and build a website?",
+    question: "What is your educational background?",
     answer:
-      "A standard landing page or portfolio takes about 5-7 days. A fully customized SaaS platform, e-commerce storefront, or database-driven MVP usually takes 2-4 weeks, depending on the complexity of the requirements.",
+      "I am pursuing my B.Tech in Computer Science & Engineering from ISBM University (2022–2026 Expected). I completed my Higher Secondary at Holy Mission High School (CBSE, Patna) and Secondary School at Patna Collegiate School (BSEB, Patna).",
   },
   {
-    question: "Do you offer post-launch support and maintenance?",
+    question: "Are you available for freelance projects and full-time roles?",
     answer:
-      "Yes! I provide 30 days of free post-launch support to address any bugs, updates, or tweaks. I also offer monthly support retainers for continuous feature updates, hosting maintenance, and search engine optimizations.",
-  },
-  {
-    question: "Will my website rank on Google search results?",
-    answer:
-      "Absolutely. I construct semantic HTML5 elements, implement schema markup, integrate canonical tags, and set up your sitemap on Google Search Console to ensure your website starts indexing and ranking in search results quickly.",
-  },
-  {
-    question: "What technologies do you use for web development?",
-    answer:
-      "I specialize in React, Next.js, and TypeScript on the frontend, with Tailwind CSS and Framer Motion for premium styling. On the backend, I use Node.js, Express, MongoDB, and PostgreSQL for robust, high-performance systems.",
+      "Yes! I am open to freelance web development projects, custom AI integration work, as well as full-time full-stack developer roles.",
   },
 ];
 
 export const testimonialsData = [
   {
-    name: "Maya Singh",
-    role: "Founder, Growth Lab",
+    name: "AVACS Engineering Team",
+    role: "Tech Lead, AVACS",
     quote:
-      "Prakash delivered a polished MVP in record time with premium UI and a scalable backend that made the launch feel strategic and modern.",
+      "Prakash has demonstrated strong technical execution in React.js, UI/UX optimization, and workforce CRM backend API integrations.",
   },
   {
-    name: "Rohan Patel",
-    role: "Product Lead, FlexOps",
+    name: "Boncel Pharma Client",
+    role: "Product Owner, Boncel Pharma",
     quote:
-      "The product dashboard was thoughtfully architected and visually exceptional. Communication was smooth, and the final experience felt premium.",
-  },
-  {
-    name: "Sara Williams",
-    role: "CEO, RemoteScale",
-    quote:
-      "A top-tier freelance partner for SaaS and web products. The work was clean, efficient, and aligned with business outcomes.",
+      "Prakash designed and built our pharmaceutical e-commerce platform with clean UI, MongoDB database flows, and SEO optimizations.",
   },
 ];
 
@@ -281,8 +296,8 @@ export const navLinks = [
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
+  { label: "Education", href: "#education" },
   { label: "Services", href: "#services" },
-  { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -296,12 +311,7 @@ export const socialLinks = [
     href: "https://www.linkedin.com/in/prakashkarya/",
   },
   {
-    label: "Instagram",
-    href: "https://www.instagram.com/prakashhzero1",
-  },
-  {
     label: "WhatsApp",
-    href: "https://wa.me/916205338520",
+    href: "https://wa.me/916203538520",
   },
 ];
-

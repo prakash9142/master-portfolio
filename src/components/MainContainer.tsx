@@ -8,6 +8,7 @@ import AboutSection from "./sections/AboutSection";
 import SkillsSection from "./sections/SkillsSection";
 import ExperienceSection from "./sections/ExperienceSection";
 import ProjectsSection from "./sections/ProjectsSection";
+import EducationSection from "./sections/EducationSection";
 import ServicesSection from "./sections/ServicesSection";
 import FAQSection from "./sections/FAQSection";
 import ContactSection from "./sections/ContactSection";
@@ -44,6 +45,7 @@ const MainContainer = () => {
         <SkillsSection />
         <ExperienceSection />
         <ProjectsSection />
+        <EducationSection />
         <ServicesSection />
         <FAQSection />
         <ContactSection />
