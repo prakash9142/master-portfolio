@@ -18,7 +18,7 @@ const getIcon = (label: string) => {
 
 const SocialIcons = () => {
   return (
-    <aside className="fixed left-8 top-1/2 -translate-y-1/2 flex-col gap-6 z-40 hidden md:flex">
+    <aside className="fixed left-6 top-1/2 -translate-y-1/2 flex-col gap-5 z-40 hidden xl:flex">
       <div className="text-[10px] tracking-[0.2em] uppercase font-bold text-accent [writing-mode:vertical-lr] select-none opacity-40 mb-2">
         Connect
       </div>

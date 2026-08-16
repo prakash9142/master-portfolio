@@ -222,8 +222,14 @@ const ProjectsSection = () => {
 
   const categories = ["All", "E-Commerce", "Marketing", "Enterprise Tools"];
 
-  const filteredProjects = projectsData.filter((project) => {
-    if (activeFilter === "All") return true;
+  // Select top featured project
+  const featuredProject = projectsData[0]; // Booon Fashion
+
+  // Filter out top featured project from bottom grid when 'All' tab is active to eliminate duplicate card!
+  const gridProjects = projectsData.filter((project) => {
+    if (activeFilter === "All") {
+      return project.title !== featuredProject.title;
+    }
     return getProjectCategory(project.title) === activeFilter;
   });
 
@@ -236,11 +242,8 @@ const ProjectsSection = () => {
     return url.replace("https://", "").replace("http://", "").replace("www.", "").replace(/\/$/, "");
   };
 
-  // Select top featured project
-  const featuredProject = projectsData[0]; // Booon Fashion
-
   return (
-    <section className="py-24 px-4 sm:px-12 lg:px-16 max-w-7xl mx-auto overflow-x-hidden" id="projects">
+    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl mx-auto w-full overflow-x-hidden" id="projects">
       <SectionHeading
         eyebrow="Portfolio & Works"
         title="Selected Work & Production Digital Products"
@@ -248,12 +251,12 @@ const ProjectsSection = () => {
       />
 
       {/* Category Filter Tabs */}
-      <div className="flex flex-wrap gap-2.5 mb-10 justify-start">
+      <div className="flex flex-wrap gap-2 sm:gap-2.5 mb-8 sm:mb-10 justify-start">
         {categories.map((category) => (
           <button
             key={category}
             onClick={() => setActiveFilter(category)}
-            className={`px-5 py-2.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider border transition-all duration-300 ${
+            className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider border transition-all duration-300 ${
               activeFilter === category
                 ? "bg-[#2dd4bf] text-[#050814] border-[#2dd4bf] shadow-lg shadow-[#2dd4bf]/20"
                 : "bg-white/5 border-white/10 text-white/60 hover:text-white hover:border-white/20"
@@ -271,13 +274,13 @@ const ProjectsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-12 rounded-[32px] border border-white/15 bg-gradient-to-br from-[#020617] via-[#050b21] to-[#020617] p-6 sm:p-8 shadow-2xl relative overflow-hidden group"
+          className="mb-10 sm:mb-12 rounded-2xl sm:rounded-[32px] border border-white/15 bg-gradient-to-br from-[#020617] via-[#050b21] to-[#020617] p-5 sm:p-8 shadow-2xl relative overflow-hidden group"
         >
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#2dd4bf]/10 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center relative z-10">
             {/* Visual Preview */}
-            <div className="lg:col-span-7 aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 shadow-xl bg-white/5 relative">
+            <div className="lg:col-span-7 aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 shadow-xl bg-white/5 relative">
               <ProjectImageGallery
                 images={
                   featuredProject.images && featuredProject.images.length > 0
@@ -298,9 +301,9 @@ const ProjectsSection = () => {
             </div>
 
             {/* Featured Content */}
-            <div className="lg:col-span-5 flex flex-col justify-between gap-6">
+            <div className="lg:col-span-5 flex flex-col justify-between gap-5 sm:gap-6">
               <div>
-                <div className="flex items-center gap-2 mb-3">
+                <div className="flex flex-wrap items-center gap-2 mb-3">
                   <span className="text-[10px] font-mono font-bold text-[#2dd4bf] uppercase tracking-widest bg-[#2dd4bf]/10 border border-[#2dd4bf]/25 px-3 py-1 rounded-full">
                     ★ FEATURED CLIENT WORK
                   </span>
@@ -312,7 +315,7 @@ const ProjectsSection = () => {
                   )}
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-snug mb-3">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-tight leading-snug mb-3">
                   {featuredProject.title}
                 </h3>
 
@@ -321,7 +324,7 @@ const ProjectsSection = () => {
                 </p>
 
                 {/* Features Highlights */}
-                <ul className="flex flex-col gap-2 mb-6">
+                <ul className="flex flex-col gap-2 mb-5">
                   {featuredProject.features.map((feat, i) => (
                     <li key={i} className="text-xs text-white/75 flex items-start gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#2dd4bf] mt-1.5 shrink-0" />
@@ -331,7 +334,7 @@ const ProjectsSection = () => {
                 </ul>
 
                 {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-2 mb-5">
                   {featuredProject.stack.map((tech) => (
                     <span
                       key={tech}
@@ -373,7 +376,7 @@ const ProjectsSection = () => {
       {/* ── Standard Projects Showcase Grid ── */}
       <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         <AnimatePresence mode="popLayout">
-          {filteredProjects.map((project) => {
+          {gridProjects.map((project) => {
             const projectImages =
               project.images && project.images.length > 0
                 ? project.images
