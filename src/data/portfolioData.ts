@@ -43,18 +43,7 @@ export const aboutData = {
     {
       year: "2022 – 2026",
       title: "B.Tech in Computer Science & Engineering",
-      subtitle:
-        "ISBM University, Chhattisgarh, India (Expected September 2026). Focused on Full-Stack Systems, Software Engineering, and AI/LLM integrations.",
-    },
-    {
-      year: "2019 – 2021",
-      title: "Higher Secondary (CBSE) — Holy Mission High School",
-      subtitle: "Patna, Bihar | Passed with GPA: 5.8.",
-    },
-    {
-      year: "2019",
-      title: "Secondary School (1st–10th) — Patna Collegiate School",
-      subtitle: "Bihar School Examination Board (BSEB), Patna, Bihar | Passed with GPA: 5.14.",
+      subtitle: "Focused on Full-Stack Systems, Software Engineering, and AI/LLM integrations.",
     },
   ],
 };
@@ -177,20 +166,6 @@ export const projectsData = [
     ],
     image: "/images/avacs_1.webp",
   },
-  {
-    title: "Personal Portfolio",
-    description:
-      "Developed a responsive developer portfolio using React, Vite, and Tailwind CSS with interactive animations and modern UI/UX.",
-    stack: ["React.js", "Vite", "Tailwind CSS", "TypeScript"],
-    live: "https://prakashkumar.info/",
-    github: "https://github.com/prakash9142",
-    features: [
-      "Developed responsive developer portfolio with interactive animations & modern UI/UX",
-      "Implemented reusable components, responsive layouts, and SEO optimization",
-      "Production deployment and cross-device testing",
-    ],
-    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=60",
-  },
 ];
 
 export const educationData = [
@@ -262,7 +237,7 @@ export const faqData = [
   {
     question: "What projects have you built?",
     answer:
-      "I have built production platforms including Boncel Pharma (pharmaceutical e-commerce), AVACS Workforce CRM (attendance & activity tracking), Booon Fashion (quick-commerce platform), Buddy AI (offline AI assistant with conversation memory), and my personal portfolio.",
+      "I have built production platforms including Boncel Pharma (pharmaceutical e-commerce), AVACS Workforce CRM (attendance & activity tracking), Booon Fashion (quick-commerce platform), and Buddy AI (offline AI assistant with conversation memory).",
   },
   {
     question: "What is your educational background?",
