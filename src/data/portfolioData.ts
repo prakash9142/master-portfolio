@@ -109,7 +109,18 @@ export const experienceData = {
   ],
 };
 
-export const projectsData = [
+export interface ProjectItem {
+  title: string;
+  description: string;
+  stack: string[];
+  live: string;
+  github: string;
+  features: string[];
+  image?: string;
+  images?: string[];
+}
+
+export const projectsData: ProjectItem[] = [
   {
     title: "Booon — Fashion Quick-Commerce Platform",
     description:
