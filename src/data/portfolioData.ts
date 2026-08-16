@@ -285,6 +285,10 @@ export const socialLinks = [
     href: "https://www.linkedin.com/in/prakashkarya/",
   },
   {
+    label: "Instagram",
+    href: "https://www.instagram.com/prakashhzero1",
+  },
+  {
     label: "WhatsApp",
     href: "https://wa.me/916203538520",
   },

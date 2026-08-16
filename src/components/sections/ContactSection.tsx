@@ -1,7 +1,7 @@
 import { useState, useEffect, FormEvent } from "react";
 import { heroData } from "../../data/portfolioData";
 import SectionHeading from "./SectionHeading";
-import { FaEnvelope, FaPaperPlane, FaWhatsapp, FaGithub } from "react-icons/fa";
+import { FaEnvelope, FaPaperPlane, FaWhatsapp, FaGithub, FaInstagram } from "react-icons/fa";
 
 const ContactSection = () => {
   const [name, setName] = useState("");
@@ -129,6 +129,17 @@ const ContactSection = () => {
                   <FaGithub className="text-base" />
                 </span>
                 <span className="text-sm font-semibold">Follow on GitHub</span>
+              </a>
+              <a
+                href="https://www.instagram.com/prakashhzero1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-muted hover:text-white transition-colors group"
+              >
+                <span className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/5 text-accent group-hover:border-accent/40 transition-colors">
+                  <FaInstagram className="text-base" />
+                </span>
+                <span className="text-sm font-semibold">Follow on Instagram</span>
               </a>
             </div>
           </div>
