@@ -177,6 +177,25 @@ export const projectsData: ProjectItem[] = [
     ],
     image: "/images/avacs_1.webp",
   },
+  {
+    title: "Infinitrix Data Stream",
+    description:
+      "Enterprise data streaming and analytics platform built to deliver real-time data pipelines, interactive dashboards, lead tracking, and automated business workflows.",
+    stack: ["React.js", "Tailwind CSS", "TypeScript", "Node.js", "REST APIs"],
+    live: "https://infinitrixdatastream.com/index.html",
+    github: "https://github.com/prakash9142",
+    features: [
+      "Real-time data stream analytics and operational monitoring dashboard",
+      "Responsive layout with interactive metrics and modern UI/UX",
+      "Automated lead capture, data pipeline integrations, and API flows",
+    ],
+    images: [
+      "/images/infinitrixdatastream.com(1).png",
+      "/images/infinitrixdatastream.com(2).png",
+      "/images/infinitrixdatastream.com(3).png",
+      "/images/infinitrixdatastream.com(4).png",
+    ],
+  },
 ];
 
 export const educationData = [
